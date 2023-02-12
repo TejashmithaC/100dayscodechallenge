@@ -1,0 +1,50 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() 
+{
+    map <string,int> t;
+    int n,q,y;
+    string x;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>q;
+        if(q==1)
+        {
+            cin>>x;
+            cin>>y;
+            t[x]=t[x]+y;
+        }
+        else if(q==2)
+        {
+            cin>>x;
+            t.erase(x);
+        }
+        else if(q==3)
+        {
+            cin>>x;
+            map<string,int>::iterator itr=t.find(x);
+            if(itr!=t.end())
+            {
+                cout<<t[x]<<endl;
+            }
+            else
+            {
+                cout<<0<<endl;   
+            }
+        
+        }
+            
+            
+    }
+      
+    return 0;
+}
